@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>BBCode Test</title>
+<script type="text/javascript" src="bbcode.js"></script>
+<script type="text/javascript">
+function outputBBCode(textarea)
+{
+   var out = document.getElementById("out");
+   var out_html = document.getElementById("out_html");
+   var html = parseBBCode(textarea.value);
+   
+   if(!out.firstChild)
+      out.appendChild(document.createTextNode(html));
+   else   
+      out.replaceChild(document.createTextNode(html), out.firstChild);
+      
+   out_html.innerHTML = html;
+}
+</script>
+</head>
+<body>
+<textarea id="in" rows="12" cols="80">[b]bold[/b], [i]italic[/i], [u]underlined[/u], [s]strike-through[/s], [samp]sample[/samp] 
+[url]http://blogs.stonesteps.ca/showpost.asp?pid=33[/url]
+[url=http://blogs.stonesteps.ca/showpost.asp?pid=33][i]BBCode[/i] Parser[/url]
+Inline [q=http://blogs.stonesteps.ca/showpost.asp?pid=33]quote[/q]
+[blockquote=http://blogs.stonesteps.ca/showpost.asp?pid=33]Block quote[/blockquote][pre]formatted 
+     text[/pre][code]if(a == b) 
+   print("done");[/code]text containing [noparse] [brackets] [/noparse]
+c[b][color=red]o[/color][/b][b][color=green]l[/color][/b][b][color=blue]o[/color][/b]rs and [size=1.2]text size[/size]
+[b][i]mismatched [/b] tags[/i] 
+remaining text should not affect page HTML.
+</textarea>
+<div>
+<input type="submit" value="Submit" onclick="outputBBCode(document.getElementById(&quot;in&quot;))" style="vertical-align: top">
+</div>
+<div id="out_html" style="border: 1px solid #777; margin: 1em auto; padding: 5px 3px;">&nbsp;</div>
+<p>This paragraph should not be formatted in any way after 
+BBCode is converted to HTML, even if there are mismatched 
+or mixed BBCode tags.</p>
+<div id="out" style="border: 1px solid #777; margin: 1em auto; padding: 5px 3px;">&nbsp;</div>
+</body>
+</html>
