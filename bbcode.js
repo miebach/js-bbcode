@@ -50,7 +50,7 @@ var convertBBCode = function(post) {
   var tagname_re = /^\/?(?:b|i|u|pre|samp|code|colou?r|size|noparse|url|s|q|blockquote)$/;
   
   // color names or hex color
-  var color_re = /^(:?black|silver|gray|white|maroon|red|purple|fuchsia|green|lime|olive|yellow|navy|blue|teal|aqua|orange|#(?:[0-9a-f]{3})?[0-9a-f]{3})$/i;
+  var color_re = /^(:?black|silver|gray|white|maroon|red|purple|fuchsia|green|lime|olive|yellow|navy|blue|teal|aqua|orange|orangered|darkorange|gold|#(?:[0-9a-f]{3})?[0-9a-f]{3})$/i;
   
   // numbers
   var number_re = /^[\\.0-9]{1,8}$/i;
