@@ -7,7 +7,7 @@ function outputBBCode(textarea)
 {
    var out = document.getElementById("out");
    var out_html = document.getElementById("out_html");
-   var html = parseBBCode(textarea.value);
+   var html = convertBBCode(textarea.value);
    
    if(!out.firstChild)
       out.appendChild(document.createTextNode(html));
